@@ -5,40 +5,20 @@ import java.util.List;
 
 public class Rocket {
 	
-	private String idCoet= "";
-	private List<Propulsor> Propulsors;
+	private String idRocket= "";
+	private List<Propeller> Propellers;
 	
-	public Rocket(String idCoet) {
-		this.idCoet = idCoet;
-		this.Propulsors=new ArrayList <Propulsor>();
-	}
-	
-	public String getIdCoet() {
-		return idCoet;
-	}
-
-	public void setIdCoet(String idCoet) {
-		this.idCoet = idCoet;
-	}
-
-	public List<Propulsor> getPropulsors() {
-		return Propulsors;
-	}
-
-	public void setPropulsors(List<Propulsor> propulsors) {
-		Propulsors = propulsors;
+	public Rocket(String idRocket) {
+		this.idRocket = idRocket;
+		this.Propellers=new ArrayList <Propeller>();
 	}
 	
-	public void addPropulsor(Propulsor propulsor){
-		Propulsors.add(propulsor);
-	}
+
 
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
-		return "The rocket id is: " + idCoet + ", els propulsors = " + Propulsors ;
+		return "The rocket id is: " + idRocket + ", els propulsors = " + Propellers ;
 	}
-	
-	
 	
 }

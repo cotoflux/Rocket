@@ -1,6 +1,9 @@
 package fase1;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
+
 
 public class UsoClases {
 
@@ -8,26 +11,39 @@ public class UsoClases {
 	public static void main(String[] args) {
 		
 		Scanner entradas = new Scanner(System.in);
+		List<Rocket> listOfRockets = new ArrayList<Rocket>();
 		
 		welcomeGame();
+		requestData(entradas);
 		
-		for(int i=0; i<=2; i++) {
+
+		
+		
+	}
+
+	private static void requestData(Scanner entradas) {
+
+		for(int i=0; i<2; i++) {  //We are asking to user for the two rockets we need to play
 			askForId(entradas);
 			askForPropellers(entradas);
 		}
 		
-		
 	}
 
-	private static void askForPropellers(Scanner entradas) {
+	private static int askForPropellers(Scanner entradas) {
 		System.out.println("The number of propellers");
-		String numberOfPropellers= entradas.next();
-		
+		int numberOfPropellers= entradas.nextInt();
+		return numberOfPropellers;
 	}
 
-	private static void askForId(Scanner entradas) {
+	private static String askForId(Scanner entradas) {
 		System.out.println("The rocket id: ");
-		String rockedCodeEntered= entradas.next();
+		String rocketCodeEntered= entradas.next();
+		return rocketCodeEntered;
+	}
+	
+	private static void addRocketId(String rocketCodeEntered) {
+		
 	}
 
 	private static void welcomeGame() {

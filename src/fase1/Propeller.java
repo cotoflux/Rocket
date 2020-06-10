@@ -1,10 +1,10 @@
 package fase1;
 
-public class Propulsor {
+public class Propeller {
 	
 	private int codePropeller;
 	
-	private Propulsor(int codePropeller) {
+	private Propeller(int codePropeller) {
 		this.codePropeller=codePropeller;
 	}
 
