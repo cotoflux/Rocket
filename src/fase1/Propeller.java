@@ -4,8 +4,13 @@ public class Propeller {
 	
 	private int codePropeller;
 	
-	private Propeller(int codePropeller) {
+	Propeller(int codePropeller) {
 		this.codePropeller=codePropeller;
+	}
+
+	@Override
+	public String toString() {
+		return "Propeller [" + codePropeller + "]";
 	}
 
 }

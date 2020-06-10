@@ -14,19 +14,23 @@ public class UsoClases {
 		List<Rocket> listOfRockets = new ArrayList<Rocket>();
 		
 		welcomeGame();
-		requestData(entradas);
 		
+		rocket3Propellers(entradas, listOfRockets);
 
 		
 		
 	}
 
-	private static void requestData(Scanner entradas) {
 
-		for(int i=0; i<2; i++) {  //We are asking to user for the two rockets we need to play
-			askForId(entradas);
-			askForPropellers(entradas);
+
+	private static void rocket3Propellers(Scanner entradas, List<Rocket> listOfRockets) {
+		Rocket rocket = new Rocket(askForId(entradas));
+		
+		for(int i=0; i<3; i++) {
+			Propeller propeller = new Propeller(askForPropellers(entradas));
+			rocket.addPropellers(propeller);
 		}
+		System.out.println(rocket.toString());
 		
 	}
 
@@ -37,18 +41,13 @@ public class UsoClases {
 	}
 
 	private static String askForId(Scanner entradas) {
-		System.out.println("The rocket id: ");
+		System.out.println("First the rocket id: ");
 		String rocketCodeEntered= entradas.next();
 		return rocketCodeEntered;
 	}
 	
-	private static void addRocketId(String rocketCodeEntered) {
-		
-	}
-
 	private static void welcomeGame() {
 		System.out.println("Welcome to Rocket race");
-		System.out.println("For the race create a rocket with the number of propellers");
-		System.out.println("To play you need to enter two codes");
+		System.out.println("For the race create a rocket one with 3 propellers and the other one with 6 propellers");
 	}
 }
