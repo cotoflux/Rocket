@@ -37,6 +37,7 @@ public class UseOfClases {
 				Propeller propeller = new Propeller(askForPropellers(entradas));
 				rocket.addPropellers(propeller);
 			}
+			
 			System.out.println(rocket.toString());
 		}else {
 			System.out.println("The id entered is not long enough");
@@ -44,14 +45,17 @@ public class UseOfClases {
 		
 	}
 	
+
+
+	//ROCKET 6 NEW METHOD
 	private static void welcomeRoket6() {
 		System.out.println("Second enter ROCKET - WITH 6 PROPELLERS");
 
 	}
 	
 
-
 	// GENERAL METHODS TO USE IN THE PROGRAM
+		
 	private static void printSpaceWithLine() {
 		System.out.println("                                                                                                     ");
 		System.out.println("                                     **************************                                      ");

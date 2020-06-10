@@ -10,7 +10,7 @@ public class Propeller {
 
 	@Override
 	public String toString() {
-		return "Propeller [" + codePropeller + "]";
+		return " " + codePropeller;
 	}
 
 
