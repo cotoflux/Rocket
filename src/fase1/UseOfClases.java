@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Scanner;
 
 
-public class UsoClases {
+public class UseOfClases {
 
 	
 	public static void main(String[] args) {
