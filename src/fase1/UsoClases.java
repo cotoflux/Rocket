@@ -12,11 +12,13 @@ public class UsoClases {
 		
 		Scanner entradas = new Scanner(System.in);
 		List<Rocket> listOfRockets = new ArrayList<Rocket>();
-		
+
 		welcomeGame();
 		printSpaceWithLine();
-		rocket3Propellers(entradas, listOfRockets);
 
+		rocket3Propellers(entradas, listOfRockets);
+			
+		printSpaceWithLine();
 		
 		
 	}
@@ -33,12 +35,19 @@ public class UsoClases {
 
 	private static void rocket3Propellers(Scanner entradas, List<Rocket> listOfRockets) {
 		Rocket rocket = new Rocket(askForId(entradas));
-		
-		for(int i=0; i<3; i++) {
-			Propeller propeller = new Propeller(askForPropellers(entradas));
-			rocket.addPropellers(propeller);
+		String getIdRocket = rocket.getIdRocket();
+		int getLengthId = getIdRocket.length();
+		if(getLengthId == 8) {
+			for(int i=0; i<3; i++) {
+				Propeller propeller = new Propeller(askForPropellers(entradas));
+				rocket.addPropellers(propeller);
+			}
+			System.out.println(rocket.toString());
+		}else {
+			System.out.println("The id entered is not long enough");
 		}
-		System.out.println(rocket.toString());
+		
+
 		
 	}
 
@@ -51,7 +60,7 @@ public class UsoClases {
 
 	private static String askForId(Scanner entradas) {
 		System.out.println("First enter ROCKET 3 propellers - the rocket id: ");
-		System.out.println("_________________________");
+		System.out.println("________________________________________________ ");
 		String rocketCodeEntered= entradas.next();
 		return rocketCodeEntered;
 	}
