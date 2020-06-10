@@ -14,11 +14,19 @@ public class UsoClases {
 		List<Rocket> listOfRockets = new ArrayList<Rocket>();
 		
 		welcomeGame();
-		
+		printSpaceWithLine();
 		rocket3Propellers(entradas, listOfRockets);
 
 		
 		
+	}
+
+
+
+	private static void printSpaceWithLine() {
+		System.out.println("                                                                                                     ");
+		System.out.println("-----------------------------------------------------------------------------------------------------");
+		System.out.println("                                                                                                     ");
 	}
 
 
@@ -35,13 +43,15 @@ public class UsoClases {
 	}
 
 	private static int askForPropellers(Scanner entradas) {
-		System.out.println("The number of propellers");
+		System.out.println("Now add the propulsive power of the propellers");
+		System.out.println("**********************************************");
 		int numberOfPropellers= entradas.nextInt();
 		return numberOfPropellers;
 	}
 
 	private static String askForId(Scanner entradas) {
-		System.out.println("First the rocket id: ");
+		System.out.println("First enter ROCKET 3 propellers - the rocket id: ");
+		System.out.println("_________________________");
 		String rocketCodeEntered= entradas.next();
 		return rocketCodeEntered;
 	}

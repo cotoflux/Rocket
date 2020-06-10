@@ -45,7 +45,7 @@ public class Rocket {
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
-		return "The rocket id is: " + idRocket + ", els propulsors = " + Propellers ;
+		return "The rocket id is: " + idRocket + ", the propellers are = " + Propellers ;
 	}
 	
 }
