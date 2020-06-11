@@ -32,8 +32,10 @@ public class UseOfClases {
 		Rocket rocket = new Rocket(askForId(entradas));
 		String getIdRocket = rocket.getIdRocket();
 		int getLengthId = getIdRocket.length();
+		int conta=6;
+		
 		if(getLengthId == 8) {
-			for(int i=0; i<6; i++) {
+			for(int i=0; i<conta; i++) {
 				Propeller propeller = new Propeller(askForPropellers(entradas));
 				rocket.addPropellers(propeller);
 			}
@@ -73,8 +75,10 @@ public class UseOfClases {
 		Rocket rocket = new Rocket(askForId(entradas));
 		String getIdRocket = rocket.getIdRocket();
 		int getLengthId = getIdRocket.length();
+		int conta=3;
+		
 		if(getLengthId == 8) {
-			for(int i=0; i<3; i++) {
+			for(int i=0; i<conta; i++) {
 				Propeller propeller = new Propeller(askForPropellers(entradas));
 				rocket.addPropellers(propeller);
 			}
