@@ -4,7 +4,7 @@ public class Propeller {
 	
 	private int codePropeller;
 	private int maxPower;
-	private int currentPower;
+	private int currentPower=0;
 	
 	public int getCodePropeller() {
 		return codePropeller;

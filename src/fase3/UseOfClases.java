@@ -12,26 +12,27 @@ public class UseOfClases {
 		
 		Scanner entradas = new Scanner(System.in);
 		List<Rocket> listOfRockets = new ArrayList<Rocket>();
+		int current=0;
 
 		//ROCKET 3***************************************************
 		welcomeGame();
 		printSpaceWithLine();
-		rocket3_6Propellers(entradas, listOfRockets);	
+		rocket3_6Propellers(entradas, listOfRockets, current);	
 		printSpaceWithLine();
 		
 	}
 
 	
-	private static void rocket3_6Propellers(Scanner entradas, List<Rocket> listOfRockets) {
+	private static void rocket3_6Propellers(Scanner entradas, List<Rocket> listOfRockets, int current) {
 		
 		System.out.println("ROCKET 3 propellers");
-		Rocket rocket3 = new Rocket(askForId(entradas));
+		Rocket rocket3 = new Rocket(askForId(entradas), current);
 		String getIdRocket3 = rocket3.getIdRocket();
 		int getLengthId3 = getIdRocket3.length();
 		int conta3=3;
 		
 		System.out.println("ROCKET 6 propellers");
-		Rocket rocket6 = new Rocket(askForId(entradas));
+		Rocket rocket6 = new Rocket(askForId(entradas), current);
 		String getIdRocket6 = rocket6.getIdRocket();
 		int getLengthId6 = getIdRocket6.length();
 		int conta6=6;
