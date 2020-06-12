@@ -4,7 +4,7 @@ package fase3;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Rocket {
+public class Rocket extends Thread {
 	
 	private String idRocket= "";
 	private List<Propeller> Propellers;
@@ -128,4 +128,16 @@ public class Rocket {
 		return idRocket +": "+ Propellers;
 	}
 	
+	@Override
+	public void run() {
+		accelerate();
+		
+			try {
+				Thread.sleep(1500);
+			}catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		
+		brakeBack();
+	}
 }
