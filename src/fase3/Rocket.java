@@ -55,19 +55,69 @@ public class Rocket {
 		
 		System.out.println("______________________________________________________________________________________________");
 		
+		
 			for(Propeller propeller: Propellers) {
+				
 				int current;
 				
 				current=propeller.getCodePropeller();
 				
 				System.out.println("\n Rocket" + this.getIdRocket()+ "Propeller" + propeller.getCodePropeller() + " Power " + propeller.getCurrentPower()+" ");
-			
+				
+				for(int i = current; i<= propeller.getMaxPower(); i++) {
+					
+					try {
+						
+						System.out.println("*** seting current power****");
+						propeller.setCurrentPower(i);
+						Thread.sleep(70);
+						
+					}catch(InterruptedException e) {
+						e.printStackTrace();
+					}
+				} 
+				
+				System.out.println(" Power " + propeller.getCurrentPower() + " ");
+				
 			}
+			
+			
 		System.out.println("______________________________________________________________________________________________");
 		
 	}
 	
-	public void brake() {
+	public void brakeBack() {
+		
+		System.out.println("______________________________________________________________________________________________");
+		
+		
+		for(Propeller propeller: Propellers) {
+			
+			int current;
+			
+			current=propeller.getCodePropeller();
+			
+			System.out.println("\n Rocket" + this.getIdRocket()+ "Propeller" + propeller.getCodePropeller() + " Power " + propeller.getCurrentPower()+" ");
+			
+			for(int i = current; i>=0; i--) {
+				
+				try {
+					
+					System.out.println("*** we are breaking back****");
+					propeller.setCurrentPower(i);
+					Thread.sleep(70);
+					
+				}catch(InterruptedException e) {
+					e.printStackTrace();
+				}
+			} 
+			
+			System.out.println(" Power " + propeller.getCurrentPower() + " ");
+			
+		}
+		
+		
+		System.out.println("______________________________________________________________________________________________");
 		
 	}
 
