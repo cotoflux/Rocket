@@ -12,61 +12,70 @@ public class UseOfClases {
 		
 		Scanner entradas = new Scanner(System.in);
 		List<Rocket> listOfRockets = new ArrayList<Rocket>();
-		int current=0;
+		int actualPower = 0;
 
-		//ROCKET 3***************************************************
+		
 		welcomeGame();
 		printSpaceWithLine();
-		rocket3_6Propellers(entradas, listOfRockets, current);	
+		
+		Rocket Rocket3 = new Rocket("32WESSDS", 0);
+		
+			Propeller fristPropeller = new Propeller(1, 10, actualPower);
+			Propeller secondPropeller = new Propeller(1, 30, actualPower);
+			Propeller thirdPropeller = new Propeller(1, 80, actualPower);
+			
+			//Add propellers to the object firstRocket
+			
+			Rocket3.addPropellers(fristPropeller);
+			Rocket3.addPropellers(secondPropeller);
+			Rocket3.addPropellers(thirdPropeller);
+			
+		Rocket Rocket6 = new Rocket("LDSFJA32", 0);
+		
+			Propeller fristPropeller6 = new Propeller(1, 10, actualPower);
+			Propeller secondPropeller6 = new Propeller(1, 30, actualPower);
+			Propeller thirdPropeller6 = new Propeller(1, 80, actualPower);
+			Propeller fourthPropeller6 = new Propeller(1, 10, actualPower);
+			Propeller fifthPropeller6 = new Propeller(1, 30, actualPower);
+			Propeller sixthPropeller6 = new Propeller(1, 80, actualPower);
+				
+			Rocket6.addPropellers(fristPropeller6);
+			Rocket6.addPropellers(secondPropeller6);
+			Rocket6.addPropellers(thirdPropeller6);
+			Rocket6.addPropellers(fourthPropeller6);
+			Rocket6.addPropellers(fifthPropeller6);
+			Rocket6.addPropellers(sixthPropeller6);
+			
+			listOfRockets.add(Rocket3);
+			listOfRockets.add(Rocket6);
+			
+		for(Rocket rocket: listOfRockets) {
+			
+			System.out.println("The rocket code is: " + rocket.getIdRocket());
+			System.out.println("Thr propeller is: ");
+			
+			for(Propeller propeller: rocket.getPropellers()) {
+				System.out.println(propeller);
+;			}
+			
+		}
+		
+		Rocket3.start();
+		
+		try {
+			Thread.sleep(500);
+		}catch(InterruptedException e) {
+			e.printStackTrace();
+		}
+		
+		Rocket6.start();
+		
 		printSpaceWithLine();
 		
 	}
 
 	
-	private static void rocket3_6Propellers(Scanner entradas, List<Rocket> listOfRockets, int current) {
 		
-		System.out.println("ROCKET 3 propellers");
-		Rocket rocket3 = new Rocket(askForId(entradas), current);
-		String getIdRocket3 = rocket3.getIdRocket();
-		int getLengthId3 = getIdRocket3.length();
-		int conta3=3;
-		
-		System.out.println("ROCKET 6 propellers");
-		Rocket rocket6 = new Rocket(askForId(entradas), current);
-		String getIdRocket6 = rocket6.getIdRocket();
-		int getLengthId6 = getIdRocket6.length();
-		int conta6=6;
-		
-		
-		if(getLengthId3 == 8 || getLengthId6 == 8) {
-			for(int i=0; i<conta3; i++) {
-				Propeller propeller = new Propeller(askForPropellers(entradas));
-				rocket3.addPropellers(propeller);
-			}
-			welcomeRoket6();
-			for(int i=0; i<conta6; i++) {
-				Propeller propeller = new Propeller(askForPropellers(entradas));
-				rocket6.addPropellers(propeller);
-			}
-			
-			System.out.println(rocket3.toString());
-			System.out.println(rocket6.toString());
-			
-		}else {
-			System.out.println("The id entered is not long enough");
-		}
-		
-
-	}
-	
-
-
-	//ROCKET 6 NEW METHOD
-	private static void welcomeRoket6() {
-		System.out.println("Second enter ROCKET - WITH 6 PROPELLERS");
-
-	}
-	
 
 	// GENERAL METHODS TO USE IN THE PROGRAM
 		
@@ -81,20 +90,6 @@ public class UseOfClases {
 		System.out.println("For the race create a rocket one with 3 propellers and the other one with 6 propellers");
 	}
 
-
-	private static int askForPropellers(Scanner entradas) {
-		System.out.println("Now add the propulsive power of the propellers");
-		System.out.println("**********************************************");
-		int numberOfPropellers= entradas.nextInt();
-		return numberOfPropellers;
-	}
-
-	private static String askForId(Scanner entradas) {
-		System.out.println("Rocket id: ");
-		System.out.println("________________________________________________ ");
-		String rocketCodeEntered= entradas.next();
-		return rocketCodeEntered;
-	}
 	
 
 }

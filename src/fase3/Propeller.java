@@ -4,17 +4,22 @@ public class Propeller {
 	
 	private int codePropeller;
 	private int maxPower;
-	private int currentPower=0;
+	private int currentPower;
+	
+	public Propeller(int codePropeller, int maxPower, int currentPower) {
+		this.codePropeller = codePropeller;
+		this.maxPower = maxPower;
+		this.currentPower= currentPower;
+		this.setMaxPower(maxPower);
+		this.setCurrentPower(currentPower);
+	}
 	
 	public int getCodePropeller() {
 		return codePropeller;
 	}
 
-	public void setCodePropeller(int codePropeller, int maxPower, int currentPower) {
-		this.codePropeller = codePropeller;
-		this.maxPower = maxPower;
-		this.currentPower = currentPower;
-		
+	public void setCodePropeller(int codePropeller) {
+		this.codePropeller = codePropeller;	
 	}
 
 	public int getMaxPower() {
